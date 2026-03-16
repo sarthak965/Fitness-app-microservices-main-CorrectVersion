@@ -100,20 +100,23 @@ export function HistoryPage() {
                     ))}
                   </div>
                 </div>
-                <div className="flex items-center gap-3">
+                <div className="flex flex-wrap items-center gap-3">
                   <Link
                     to={`/app/coach-chat?activityId=${encodeURIComponent(activity.id)}&type=${encodeURIComponent(activity.type)}&name=${encodeURIComponent(activity.name || '')}&startedAt=${encodeURIComponent(activity.startTime)}&duration=${activity.duration}`}
-                    className="action-secondary"
+                    className="action-secondary min-h-[60px] min-w-[112px] px-4 text-center"
                   >
                     Ask AI
                   </Link>
                   {activity.recommendationStatus === 'READY' ? (
-                    <Link to={`/app/recommendations?activity=${activity.id}`} className="action-secondary">
+                    <Link
+                      to={`/app/recommendations?activity=${activity.id}`}
+                      className="action-secondary min-h-[60px] min-w-[112px] px-4 text-center"
+                    >
                       Open AI brief
                     </Link>
                   ) : null}
                   <button
-                    className="action-secondary"
+                    className="action-secondary min-h-[60px] min-w-[112px] px-4 text-center"
                     onClick={() => void handleDelete(activity.id)}
                     disabled={deletingId === activity.id}
                   >

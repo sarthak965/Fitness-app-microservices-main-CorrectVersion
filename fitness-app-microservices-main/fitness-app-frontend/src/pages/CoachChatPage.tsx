@@ -156,7 +156,7 @@ export function CoachChatPage() {
           }}
         >
           <textarea
-            className="field min-h-32 border-0 bg-slate-50"
+            className="field min-h-32 border-0 bg-white/80"
             placeholder="Ask about this workout, your next session, recovery, pacing, fatigue, or overall fitness..."
             value={input}
             onChange={(event) => setInput(event.target.value)}
